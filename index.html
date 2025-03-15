@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Harry Potter Tribute</title>
+  <style>
+    /* General Styles */
+    body, html {
+      margin: 0;
+      padding: 0;
+      font-family: 'Cinzel', serif;
+      background: url('https://i.redd.it/9a5a3ssbjyzb1.jpg') no-repeat center center fixed;
+      background-size: cover;
+      color: #fff;
+      scroll-behavior: smooth;
+    }
+    
+    /* Section Styling */
+    section {
+      padding: 100px 50px;
+      text-align: center;
+      background: rgba(0, 0, 0, 0.6);
+      margin: 20px 0;
+      border-radius: 10px;
+    }
+    
+    /* Hero Section */
+    #hero {
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      background: rgba(0, 0, 0, 0.7);
+    }
+    
+    /* Hogwarts Houses */
+    #hogwarts {
+      padding: 50px;
+    }
+    
+    /* House Buttons */
+    .house-buttons .house-btn {
+      padding: 10px 20px;
+      border: none;
+      margin: 10px;
+      cursor: pointer;
+      font-size: 1.2rem;
+      color: white;
+      transition: 0.3s ease-in-out;
+    }
+    
+    .house-btn[data-house="gryffindor"] { background: #ae0001; }
+    .house-btn[data-house="hufflepuff"] { background: #ffdb58; color: black; }
+    .house-btn[data-house="ravenclaw"] { background: #0e1a40; }
+    .house-btn[data-house="slytherin"] { background: #1a472a; }
+    
+    .house-btn:hover { opacity: 0.8; }
+    
+    /* Books Section */
+    .book-gallery {
+      display: flex;
+      overflow-x: auto;
+      gap: 20px;
+      padding: 20px;
+    }
+    
+    .book {
+      text-align: center;
+      max-width: 200px;
+    }
+    
+    .book img {
+      width: 150px;
+      transition: transform 0.3s ease-in-out;
+    }
+    
+    .book img:hover {
+      transform: scale(1.1);
+    }
+    
+    .book-title {
+      margin-top: 10px;
+      font-size: 1rem;
+      font-weight: bold;
+    }
+    
+    /* Video Section */
+    .video-gallery {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+    }
+    
+    iframe {
+      border: none;
+      box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.2);
+      transition: transform 0.3s ease-in-out;
+    }
+    
+    iframe:hover {
+      transform: scale(1.05);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Hero Section -->
+  <section id="hero">
+    <div class="hero-content">
+      <h1>Welcome to the Wizarding World</h1>
+      <p>Experience the magic of Harry Potter like never before</p>
+      <a href="#about" class="scroll-down">Explore</a>
+    </div>
+  </section>
+
+  <!-- Hogwarts Houses Section -->
+  <section id="hogwarts">
+    <h2>Hogwarts & The Four Houses</h2>
+    <div class="house-buttons">
+      <button class="house-btn" data-house="gryffindor" onclick="changeHouse('gryffindor')">Gryffindor</button>
+      <button class="house-btn" data-house="hufflepuff" onclick="changeHouse('hufflepuff')">Hufflepuff</button>
+      <button class="house-btn" data-house="ravenclaw" onclick="changeHouse('ravenclaw')">Ravenclaw</button>
+      <button class="house-btn" data-house="slytherin" onclick="changeHouse('slytherin')">Slytherin</button>
+    </div>
+    <div id="house-info">
+      <img id="house-image" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSU_GWdEJxtIFbqYpZrPG-9M8auFurHHUYgBw&s" alt="House Image">
+      <p id="house-description">Click on a house to learn more!</p>
+    </div>
+  </section>
+
+  <!-- Books Section -->
+  <section id="books">
+    <h2>The Harry Potter Books</h2>
+    <div class="book-gallery">
+      <div class="book">
+        <img src="https://upload.wikimedia.org/wikipedia/en/6/6b/Harry_Potter_and_the_Philosopher%27s_Stone_Book_Cover.jpg" alt="Book 1">
+        <p class="book-title">Harry Potter and the Philosopher's Stone</p>
+      </div>
+      <div class="book">
+        <img src="https://upload.wikimedia.org/wikipedia/en/5/5c/Harry_Potter_and_the_Chamber_of_Secrets.jpg" alt="Book 2">
+        <p class="book-title">Harry Potter and the Chamber of Secrets</p>
+      </div>
+      <div class="book">
+        <img src="https://upload.wikimedia.org/wikipedia/en/thumb/a/a0/Harry_Potter_and_the_Prisoner_of_Azkaban.jpg/220px-Harry_Potter_and_the_Prisoner_of_Azkaban.jpg" alt="Book 3">
+        <p class="book-title">Harry Potter and the Prisoner of Azkaban</p>
+      </div>
+      <div class="book">
+        <img src="https://upload.wikimedia.org/wikipedia/en/b/b6/Harry_Potter_and_the_Goblet_of_Fire_cover.png" alt="Book 4">
+        <p class="book-title">Harry Potter and the Goblet of Fire</p>
+      </div>
+      <div class="book">
+        <img src="https://upload.wikimedia.org/wikipedia/en/7/70/Harry_Potter_and_the_Order_of_the_Phoenix.jpg" alt="Book 5">
+        <p class="book-title">Harry Potter and the Order of the Phoenix</p>
+      </div>
+      <div class="book">
+        <img src="https://upload.wikimedia.org/wikipedia/en/b/b5/Harry_Potter_and_the_Half-Blood_Prince_cover.png" alt="Book 6">
+        <p class="book-title">Harry Potter and the Half-Blood Prince</p>
+      </div>
+      <div class="book">
+        <img src="https://upload.wikimedia.org/wikipedia/en/a/a9/Harry_Potter_and_the_Deathly_Hallows.jpg" alt="Book 7">
+        <p class="book-title">Harry Potter and the Deathly Hallows</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Video Section -->
+  <section id="videos">
+    <h2>Iconic Harry Potter Moments</h2>
+    <div class="video-gallery">
+      <iframe width="560" height="315" src="https://www.youtube.com/embed/2Tpb1XyqGOQ?si=a313iCvbjHdA03ut" allowfullscreen></iframe>
+      <iframe width="560" height="315" src="https://www.youtube.com/embed/VyHV0BRtdxo" allowfullscreen></iframe>
+      <iframe width="560" height="315" src="https://www.youtube.com/embed/lJ83ILGA8yI?si=PrNtEGobt2FbnaAE" allowfullscreen></iframe>
+    </div>
+  </section>
+
+  <script>
+    function changeHouse(house) {
+      const houseInfo = {
+        gryffindor: { 
+          img: "https://www.redwolf.in/image/cache/catalog/artwork-Images/mens/Digital/harry-potter-gryffindor-crest-t-shirt-india-artwork-white-500x667.jpg?m=1722623751", 
+          desc: "Bravery, courage, and determination!" 
+        },
+        hufflepuff: { 
+          img: "https://www.redwolf.in/image/cache/catalog/artwork-Images/mens/Digital/harry-potter-hufflepuff-crest-t-shirt-india-artwork-white-500x667.jpg?m=1722019709", 
+          desc: "Loyalty, patience, and hard work!" 
+        },
+        ravenclaw: { 
+          img: "https://www.redwolf.in/image/cache/catalog/artwork-Images/mens/Digital/harry-potter-ravenclaw-crest-t-shirt-india-artwork-white-500x667.jpg?m=1725388559", 
+          desc: "Wisdom, creativity, and intelligence!" 
+        },
+        slytherin: { 
+          img: "https://www.redwolf.in/image/cache/catalog/artwork-Images/mens/Digital/harry-potter-slytherin-tome-t-shirt-india-artwork-white-500x667.jpg?m=171927742z", 
+          desc: "Ambition, cunning, and resourcefulness!" 
+        }
+      };
+
+      document.getElementById("house-image").src = houseInfo[house].img;
+      document.getElementById("house-description").innerText = houseInfo[house].desc;
+    }
+  </script>
+</body>
+</html>
